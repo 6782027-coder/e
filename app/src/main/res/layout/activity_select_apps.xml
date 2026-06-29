@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:orientation="vertical" android:background="#F0F2F8"
+    android:layoutDirection="rtl">
+
+    <androidx.appcompat.widget.Toolbar android:id="@+id/toolbar"
+        android:layout_width="match_parent" android:layout_height="?attr/actionBarSize"
+        android:background="#3F51B5"/>
+
+    <!-- טאבים -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="44dp"
+        android:orientation="horizontal">
+        <TextView android:id="@+id/tabApps"
+            android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
+            android:text="📱 אפליקציות" android:gravity="center"
+            android:textSize="12sp" android:textStyle="bold"/>
+        <TextView android:id="@+id/tabBlocked"
+            android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
+            android:text="🚫 חסימות" android:gravity="center"
+            android:textSize="12sp" android:textStyle="bold"/>
+        <TextView android:id="@+id/tabWhitelist"
+            android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1"
+            android:text="✅ רשימה לבנה" android:gravity="center"
+            android:textSize="12sp" android:textStyle="bold"/>
+    </LinearLayout>
+
+    <!-- פאנל אפליקציות -->
+    <LinearLayout android:id="@+id/panelApps"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:orientation="vertical">
+        <androidx.appcompat.widget.SearchView android:id="@+id/searchApps"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:background="#FFFFFF"/>
+        <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="✓ מותר  |  👁 מוסתר מה-Launcher"
+            android:textColor="#455A64" android:textSize="11sp"
+            android:gravity="center" android:padding="6dp" android:background="#E8EAF6"/>
+        <ScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+            <GridLayout android:id="@+id/appsGrid"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:padding="4dp"/>
+        </ScrollView>
+        <Button android:id="@+id/btnSave"
+            android:layout_width="match_parent" android:layout_height="56dp"
+            android:text="שמור" android:backgroundTint="#3F51B5"
+            android:textColor="#FFFFFF" android:textSize="16sp"/>
+    </LinearLayout>
+
+    <!-- פאנל חסימות אחרונות -->
+    <LinearLayout android:id="@+id/panelBlocked"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:orientation="vertical" android:visibility="gone">
+        <ScrollView android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="1">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="8dp">
+                <TextView android:id="@+id/blockedLogEmpty"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="אין חסימות עדיין 🎉" android:gravity="center"
+                    android:textColor="#9E9E9E" android:textSize="16sp" android:padding="32dp"
+                    android:visibility="gone"/>
+                <LinearLayout android:id="@+id/blockedLogContainer"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical"/>
+            </LinearLayout>
+        </ScrollView>
+        <Button android:id="@+id/btnClearLog"
+            android:layout_width="match_parent" android:layout_height="48dp"
+            android:text="נקה לוג" android:backgroundTint="#9E9E9E" android:textColor="#FFFFFF"/>
+    </LinearLayout>
+
+    <!-- פאנל רשימה לבנה -->
+    <LinearLayout android:id="@+id/panelWhitelist"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:orientation="vertical" android:visibility="gone">
+
+        <!-- הקלדה חופשית -->
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:padding="12dp" android:background="#FFFFFF">
+            <EditText android:id="@+id/inputManualPkg"
+                android:layout_width="0dp" android:layout_height="44dp" android:layout_weight="1"
+                android:hint="הקלד שם חבילה (למשל: com.whatsapp)"
+                android:textSize="13sp" android:inputType="text"
+                android:background="@android:drawable/edit_text"
+                android:layout_marginEnd="8dp"/>
+            <Button android:id="@+id/btnAddManual"
+                android:layout_width="wrap_content" android:layout_height="44dp"
+                android:text="הוסף" android:backgroundTint="#3F51B5" android:textColor="#FFFFFF"/>
+        </LinearLayout>
+
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#C5CAE9"/>
+
+        <ScrollView android:layout_width="match_parent" android:layout_height="match_parent">
+            <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:orientation="vertical" android:padding="8dp">
+                <TextView android:id="@+id/whitelistEmpty"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:text="אין היתרים עדיין" android:gravity="center"
+                    android:textColor="#9E9E9E" android:textSize="16sp" android:padding="32dp"
+                    android:visibility="gone"/>
+                <LinearLayout android:id="@+id/whitelistContainer"
+                    android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:orientation="vertical"/>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- מגן -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M54,18 L82,28 L82,52 C82,66 70,76 54,84 C38,76 26,66 26,52 L26,28 Z"/>
+
+    <!-- מגן פנימי — גוון כחול בהיר -->
+    <path
+        android:fillColor="#C5CAE9"
+        android:pathData="M54,24 L76,32 L76,52 C76,63 66,71 54,78 C42,71 32,63 32,52 L32,32 Z"/>
+
+</vector>
